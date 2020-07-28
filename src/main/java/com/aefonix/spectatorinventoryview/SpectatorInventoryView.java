@@ -129,9 +129,6 @@ public class SpectatorInventoryView extends JavaPlugin implements Listener {
       hunger.setItemMeta(hungerMeta);
       preview.setItem(8, hunger);
 
-      ItemStack[] items = IntStream.range(9, 35).boxed().map(inventory::getItem).toArray(ItemStack[]::new);
-      ItemStack[] hotbar = IntStream.range(0, 8).boxed().map(inventory::getItem).toArray(ItemStack[]::new);
-
       inventory.setContents(player.getInventory().getContents());
 
       spectator.openInventory(preview);
