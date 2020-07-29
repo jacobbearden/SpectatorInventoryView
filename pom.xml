@@ -80,6 +80,26 @@
           <failOnUnableToExtractRepoInfo>false</failOnUnableToExtractRepoInfo>
         </configuration>
       </plugin>
+
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.8</version>
+        <executions>
+          <execution>
+            <id>jar</id>
+            <phase>package</phase>
+            <configuration>
+              <target>
+                <copy file="${basedir}/target/${project.build.finalName}.jar"
+                      tofile="${basedir}/target/${project.artifactId}.jar"/>
+              </target>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 </project>
